@@ -20,7 +20,10 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven
-      run: mvn package
+      run: |
+       mvn package
+       javac --version
+       mvn --version
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
